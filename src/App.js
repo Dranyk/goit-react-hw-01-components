@@ -1,22 +1,28 @@
-import Profile from './components/Profile/Profile';
+import data from './data/data.json';
 import users from './data/user.json';
-import Section from './components/Section/Section'
+import Section from './components/Section/Section';
+import Profile from './components/Profile/Profile';
+import Statistics from './components/Statistics/Statistics';
+import StatisticsList from './components/Statistics/StatisticsList';
 
 export default function App() {
   return (
-      <div> 
-        <Section>
+    <div>
+      <Section>
         <Profile
-        userName={users.username}
-        tag={users.tag}
-        location={users.location}
-        avatar={users.avatar}
-        // followers={users.stats.followers}
-        // likes={users.stats.likes}
-        // views={users.stats.views}
+          {...users}
+          // username={users.username}
+          // tag={users.tag}
+          // location={users.location}
+          // avatar={users.avatar}
+          // followers={users.stats.followers}
+          // likes={users.stats.likes}
+          // views={users.stats.views}
         />
-        </Section>
-        
-      </div>
-);
+      </Section>
+      <Section>
+        <Statistics title="Upload stats" stats={data} />
+      </Section>
+    </div>
+  );
 }
