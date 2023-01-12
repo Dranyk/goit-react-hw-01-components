@@ -1,7 +1,5 @@
-import Statistics from './Statistics';
 import getRandomHexColor from '../getRandomHexColor';
 import PropTypes from 'prop-types';
-import data from '../../data/data.json';
 
 function StatisticsList({ stats = [] }) {
     return [...stats].map(({ id, label, percentage }) => {

@@ -3,7 +3,6 @@ import users from './data/user.json';
 import Section from './components/Section/Section';
 import Profile from './components/Profile/Profile';
 import Statistics from './components/Statistics/Statistics';
-import StatisticsList from './components/Statistics/StatisticsList';
 
 export default function App() {
   return (
