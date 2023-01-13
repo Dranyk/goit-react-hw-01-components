@@ -1,17 +1,18 @@
 import getRandomHexColor from '../getRandomHexColor';
 import PropTypes from 'prop-types';
+import css from "./StatisticsList.module.css";
 
 function StatisticsList({ stats = [] }) {
     return [...stats].map(({ id, label, percentage }) => {
         const randomColor = getRandomHexColor();
         return (
           <li
-            className="item"
+            className={css.item}
             key={id}
             style={{ backgroundColor: randomColor }}
           >
-            <span className="label">{label} </span>
-            <span className="percentage">{percentage}%</span>
+            <span className={css.label}>{label} </span>
+            <span className={css.percentage}>{percentage}%</span>
           </li>
         );
       });
