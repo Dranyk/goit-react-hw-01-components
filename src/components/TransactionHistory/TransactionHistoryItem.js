@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
+import css from "./TransactionHistoryItem.module.css";
 
-const TransactionItem = ({ type, amount, currency, rowColor }) => (
-  <tr>
-    <td className="rowColor">{type}</td>
-    <td className="rowColor">{amount}</td>
-    <td className="rowColor">{currency}</td>
+const TransactionHistoryItem = ({ type, amount, currency }) => (
+  <tr className={css.tr}>
+    <td>{type}</td>
+    <td>{amount}</td>
+    <td>{currency}</td>
   </tr>
 );
 
-TransactionItem.propTypes = {
+TransactionHistoryItem.propTypes = {
   type:PropTypes.string.isRequired,
   amount:PropTypes.string.isRequired,
   currency:PropTypes.string.isRequired,
-  rowColor:PropTypes.string.isRequired,
 };
 
-export default TransactionItem;
+export default TransactionHistoryItem;
