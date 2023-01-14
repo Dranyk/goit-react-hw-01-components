@@ -1,21 +1,19 @@
-.item {
+.statistics{
+    margin: 0 auto 0;
+    padding-top: 40px;
+    background-color: #fff;
+    width: 400px;
+
+}
+.title{
+    color: #515151;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.statList{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex: 1;
-    align-items: center;
-    padding: 20px;
-    color: #fff;
-  }
-  
-  .label {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-  .percentage{
-      font-size: 20px;
-  }
-  
-  .item > span {
-    text-shadow: 0 0 2px #000;
-  }
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}

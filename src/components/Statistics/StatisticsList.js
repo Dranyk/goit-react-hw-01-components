@@ -1,30 +1,26 @@
-import getRandomHexColor from '../getRandomHexColor';
 import PropTypes from 'prop-types';
 import css from "./StatisticsList.module.css";
+import StatisticsListItem from './StatisticsListItem';
 
-function StatisticsList({ stats = [] }) {
-    return [...stats].map(({ id, label, percentage }) => {
-        const randomColor = getRandomHexColor();
-        return (
-          <li
-            className={css.item}
-            key={id}
-            style={{ backgroundColor: randomColor }}
-          >
-            <span className={css.label}>{label} </span>
-            <span className={css.percentage}>{percentage}%</span>
-          </li>
-        );
-      });
+const StatisticsList = ({ title, stats }) => {
+    return (
+        <section className={css.statistics}>
+        {title?<h2 className={css.title}>{title}</h2>:null}
+      <ul className={css.statList}>
+        <StatisticsListItem stats={stats} />
+      </ul>
+    </section>
+    );
 }
 
 StatisticsList.propTypes = {
+    title:PropTypes.string,
     stats: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string.isRequired,
-          label: PropTypes.string.isRequired,
-          percentage: PropTypes.number.isRequired,
-        })
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        percentage: PropTypes.number.isRequired,
+      })
       ),
 };
 
